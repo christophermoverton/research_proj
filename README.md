@@ -136,7 +136,7 @@ This project is designed to run in an isolated Python virtual environment to ens
 ## **References**
 1. [NOAA ISD Archive](https://www.ncei.noaa.gov/data/global-hourly/archive/isd/)
 2. [ISD Dataset Documentation](https://www.ncei.noaa.gov/data/global-hourly/doc/)
-3. [EIA API](https://www.eia.gov/developer/))
+3. [EIA Developer to get started](https://www.eia.gov/developer/))
 
 ---
 

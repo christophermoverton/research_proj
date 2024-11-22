@@ -17,7 +17,7 @@ try:
     print(f"Loaded stations data with {len(stations_df)} rows.")
 
     # Split 'station_id' by ':' and take the right part
-    print("Step 2: Processing station IDs and extracting state...")
+    print("Step 2:https://www.eia.gov/developer/ Processing station IDs and extracting state...")
     stations_df['station_id'] = stations_df['station_id'].str.split(':').str[-1].str.strip()
 
     # Extract necessary columns (station_id and state)

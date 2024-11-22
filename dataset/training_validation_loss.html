@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"$schema": "https://vega.github.io/schema/vega/v5.json", "data": [{"name": "source_0", "values": [{"Epoch": 1, "Type": "Training Loss", "Loss": 0.002722062636166811}, {"Epoch": 2, "Type": "Training Loss", "Loss": 0.0016482180217280984}, {"Epoch": 1, "Type": "Validation Loss", "Loss": 0.0024670506827533245}, {"Epoch": 2, "Type": "Validation Loss", "Loss": 0.002323554363101721}]}, {"name": "data_0", "values": [{"Epoch": 1, "Loss": 0.002722062636166811, "Type": "Training Loss"}, {"Epoch": 2, "Loss": 0.0016482180217280984, "Type": "Training Loss"}, {"Epoch": 1, "Loss": 0.0024670506827533245, "Type": "Validation Loss"}, {"Epoch": 2, "Loss": 0.002323554363101721, "Type": "Validation Loss"}]}, {"name": "source_0_color_domain_Type_0", "values": [{"Type": "Training Loss"}, {"Type": "Validation Loss"}]}, {"name": "data_0_color_domain_Type_1", "values": [{"Type": "Training Loss"}, {"Type": "Validation Loss"}]}], "marks": [{"type": "group", "name": "layer_0_pathgroup", "from": {"facet": {"data": "source_0", "name": "faceted_path_layer_0_main", "groupby": ["Type"]}}, "encode": {"update": {"height": {"field": {"signal": null, "datum": null, "group": "height", "parent": null}}, "width": {"field": {"signal": null, "datum": null, "group": "width", "parent": null}}}}, "marks": [{"type": "line", "name": "layer_0_marks", "from": {"data": "faceted_path_layer_0_main"}, "sort": {"field": "x"}, "encode": {"update": {"defined": {"signal": "isValid(datum[\"Epoch\"]) && isFinite(+datum[\"Epoch\"]) && isValid(datum[\"Loss\"]) && isFinite(+datum[\"Loss\"])"}, "stroke": {"field": "Type", "scale": "color"}, "x": {"field": "Epoch", "scale": "x"}, "y": {"field": "Loss", "scale": "y"}, "tooltip": {"signal": "{\"Epoch\": format(datum[\"Epoch\"], \"\"), \"Type\": isValid(datum[\"Type\"]) ? datum[\"Type\"] : \"\"+datum[\"Type\"], \"Loss\": format(datum[\"Loss\"], \"\")}"}}}, "style": ["line"]}]}, {"type": "symbol", "name": "layer_1_marks", "from": {"data": "data_0"}, "encode": {"update": {"opacity": {"value": 1}, "fill": {"field": "Type", "scale": "color"}, "tooltip": {"signal": "{\"Epoch\": format(datum[\"Epoch\"], \"\"), \"Type\": isValid(datum[\"Type\"]) ? datum[\"Type\"] : \"\"+datum[\"Type\"], \"Loss\": format(datum[\"Loss\"], \"\")}"}, "x": {"field": "Epoch", "scale": "x"}, "y": {"field": "Loss", "scale": "y"}}}, "style": ["point"]}], "scales": [{"name": "x", "type": "linear", "domain": {"fields": [{"data": "source_0", "field": "Epoch"}, {"data": "data_0", "field": "Epoch"}]}, "range": [0, {"signal": "width"}], "nice": true, "zero": false}, {"name": "y", "type": "linear", "domain": {"fields": [{"data": "source_0", "field": "Loss"}, {"data": "data_0", "field": "Loss"}]}, "range": [{"signal": "height"}, 0], "nice": true, "zero": true}, {"name": "color", "type": "ordinal", "domain": {"fields": [{"data": "source_0_color_domain_Type_0", "field": "Type"}, {"data": "data_0_color_domain_Type_1", "field": "Type"}], "sort": true}, "range": "category"}], "axes": [{"scale": "x", "tickCount": {"signal": "ceil(width/40)"}, "orient": "bottom", "ticks": false, "labels": false, "minExtent": 0, "maxExtent": 0, "zindex": 0, "grid": true, "domain": false, "gridScale": "y", "aria": false}, {"scale": "y", "zindex": 0, "ticks": false, "orient": "left", "domain": false, "grid": true, "maxExtent": 0, "aria": false, "gridScale": "x", "tickCount": {"signal": "ceil(height/40)"}, "labels": false, "minExtent": 0}, {"scale": "x", "labelFlush": true, "tickCount": {"signal": "ceil(width/40)"}, "labelOverlap": true, "grid": false, "title": "Epochs", "zindex": 0, "orient": "bottom"}, {"scale": "y", "labelOverlap": true, "orient": "left", "grid": false, "tickCount": {"signal": "ceil(height/40)"}, "zindex": 0, "title": "Loss (MSE)"}], "title": {"text": "Training and Validation Loss Over Epochs", "frame": "group"}, "padding": 5, "height": 400, "background": "white", "style": "cell", "legends": [{"title": "Loss Type", "stroke": "color", "symbolType": "circle", "fill": "color", "encode": {"symbols": {"update": {"opacity": {"value": 1}}}}}], "width": 600};
+      var embedOpt = {"mode": "vega"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

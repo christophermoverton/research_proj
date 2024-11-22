@@ -1,0 +1,31 @@
+Summary of Recommended Tables
+Primary Generation Overview: 1.1, 1.1.A, 1.2.A, 1.2.B, 1.2.C, 1.2.D
+Regional and Sector-Specific Generation: 1.3.A, 1.3.B, 1.4.A, 1.4.B, 
+1.5.A, 1.5.B, 1.6.A, 1.6.B, 1.7.A, 1.7.B, 1.8.A, 1.8.B
+Renewables and Hydro Power: 1.10.A, 1.10.B, 1.11.A, 1.11.B
+Solar and Biomass by Census Division: 1.17.A, 1.17.B, 1.18.A, 1.18.B
+
+
+Summary of Recommended Tables
+Average Price by Sector: 5.3
+Sales by Sector and State: 5.4.A, 5.4.B
+Revenue by Sector and State: 5.5.A, 5.5.B
+State-Level Average Price by Sector: 5.6.A, 5.6.B
+These tables collectively offer a comprehensive view of how 
+electricity prices, sales, and revenue vary by sector and state. 
+By understanding these factors, the model can better predict 
+demand changes in response to pricing and revenue shifts, which 
+are often driven by seasonal and weather-related factors.
+
+Summary of Recommended Tables
+Net Summer Capacity by Technology and Fuel Type: 6.2.A, 6.2.B, 6.2.C
+Capacity Factors: 6.7.A, 6.7.B, 6.7.C
+Capacity Changes: 6.1
+These tables will offer insights into how generation capacity aligns 
+with demand, particularly during high-demand summer months, and how 
+capacity utilization differs by fuel type. This data is essential 
+for building a model that considers how available capacity can support
+energy needs under seasonal and climatic variations.
+
+Finally table 7.1 
+

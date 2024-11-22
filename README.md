@@ -100,6 +100,19 @@ This project is designed to run in an isolated Python virtual environment to ens
 3. **Other Data:**
    - The `download_dataset.sh` script automates the download and setup of most required datasets (for Linux users).
 
+Here is a sample section you can add to the `README.md` file:
+
+---
+
+### Hourly Climate Normals Dataset
+
+If you are using the **Hourly Climate Normals Dataset**, please note:
+
+- The dataset was originally designed to be accessed from an **S3 bucket**. If you switch to a **local data lake storage**, you will need to **refactor the source paths** in the code to reflect this change.
+- Ensure that your local data lake storage is properly structured and indexed to match the expected schema for seamless data wrangling.
+- For replicating the data wrangling process outlined in this repository, update all scripts and configurations that previously referenced the S3 bucket to point to your local data lake paths.
+
+If you encounter issues with the dataset paths or configuration changes, consider reviewing the data pipeline setup and storage conventions used in your local environment.
 ---
 
 ## **How to Run the Project**

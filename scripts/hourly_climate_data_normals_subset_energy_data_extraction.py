@@ -127,21 +127,21 @@ def main():
     states = ['CA', 'TX', 'FL', 'NY']
     regions = ['CAL', 'FLA', 'NY', 'TEX']
     
-    # # Step 1: Get list of stations in specified states
-    # station_list = get_stations_for_states(S3_BUCKET, 'hly_inventory.txt', states)
+    # Step 1: Get list of stations in specified states
+    station_list = get_stations_for_states(S3_BUCKET, 'hly_inventory.txt', states)
     
-    # # Step 2: Process each large climate data file in chunks
-    # climate_files = {
-    #     'hly-degh-normal.csv': 'degh_filtered.csv',
-    #     'hly-hidx-normal.csv': 'hidx_filtered.csv',
-    #     'hly-wchl-normal.csv': 'wchl_filtered.csv'
-    # }
-    # date_columns = {'id_column': 'GHCN_ID', 'month': 'month', 'day': 'day', 'hour': 'hour'}
+    # Step 2: Process each large climate data file in chunks
+    climate_files = {
+        'hly-degh-normal.csv': 'degh_filtered.csv',
+        'hly-hidx-normal.csv': 'hidx_filtered.csv',
+        'hly-wchl-normal.csv': 'wchl_filtered.csv'
+    }
+    date_columns = {'id_column': 'GHCN_ID', 'month': 'month', 'day': 'day', 'hour': 'hour'}
     
-    # for file_name, output_file_name in climate_files.items():
-    #     output_file = os.path.join(BASE_OUTPUT_DIR, CLIMATE_DIR, output_file_name)
-    #     print(f"Processing {file_name} and saving filtered data to {output_file}")
-    #     filter_and_save_chunked_data(S3_BUCKET, file_name, station_list, output_file, date_columns)
+    for file_name, output_file_name in climate_files.items():
+        output_file = os.path.join(BASE_OUTPUT_DIR, CLIMATE_DIR, output_file_name)
+        print(f"Processing {file_name} and saving filtered data to {output_file}")
+        filter_and_save_chunked_data(S3_BUCKET, file_name, station_list, output_file, date_columns)
     
     # Step 3: Collect hourly energy data for each region and save to files
     for region in regions:
